@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Magento 2 Performance Optimization : Code optimization and database audit. - Fitonesu</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Rather than opting for shared hosting, consider hosting your magento ecommerce store on a cloud provider like cloudways that offers a managed magento cloud hosting experience.">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Fitonesu" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Fitonesu</div>
+					
+				</div>
+		</a>
+	</div>
+		<div class="divider"></div>
+	</div>
+	
+    <script data-cfasync="false">
+    var _avp = _avp || [];
+    (function() {
+    var s = document.createElement('script');
+    s.type = 'text/javascript'; s.async = true; s.src = window.location.protocol + '//adserver.adreactor.com/js/libcode3.js';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+    })();
+    </script>
+    
+	
+	    
+    <script>
+    if (!document.cookie || document.cookie.indexOf('AVPWCAP=') == -1) {
+    _avp.push({ alias: '/', type: 'window', zid: 23, pid: 8697 });
+    }
+    </script>
+    
+	
+<script>(function(a,b,c){Object.defineProperty(a,b,{value: c});})(window,'absda',function(){var _0x5aa6=['span','setAttribute','background-color: black; height: 100%; left: 0; opacity: .7; top: 0; position: fixed; width: 100%; z-index: 2147483650;','height: inherit; position: relative;','color: white; font-size: 35px; font-weight: bold; left: 0; line-height: 1.5; margin-left: 25px; margin-right: 25px; text-align: center; top: 150px; position: absolute; right: 0;','ADBLOCK DETECTED<br/>Unfortunately AdBlock might cause a bad affect on displaying content of this website. Please, deactivate it.','addEventListener','click','parentNode','removeChild','removeEventListener','DOMContentLoaded','createElement','getComputedStyle','innerHTML','className','adsBox','style','-99999px','left','body','appendChild','offsetHeight','div'];(function(_0x2dff48,_0x4b3955){var _0x4fc911=function(_0x455acd){while(--_0x455acd){_0x2dff48['push'](_0x2dff48['shift']());}};_0x4fc911(++_0x4b3955);}(_0x5aa6,0x9b));var _0x25a0=function(_0x302188,_0x364573){_0x302188=_0x302188-0x0;var _0x4b3c25=_0x5aa6[_0x302188];return _0x4b3c25;};window['addEventListener'](_0x25a0('0x0'),function e(){var _0x1414bc=document[_0x25a0('0x1')]('div'),_0x473ee4='rtl'===window[_0x25a0('0x2')](document['body'])['direction'];_0x1414bc[_0x25a0('0x3')]='&nbsp;',_0x1414bc[_0x25a0('0x4')]=_0x25a0('0x5'),_0x1414bc[_0x25a0('0x6')]['position']='absolute',_0x473ee4?_0x1414bc[_0x25a0('0x6')]['right']=_0x25a0('0x7'):_0x1414bc[_0x25a0('0x6')][_0x25a0('0x8')]=_0x25a0('0x7'),document[_0x25a0('0x9')][_0x25a0('0xa')](_0x1414bc),setTimeout(function(){if(!_0x1414bc[_0x25a0('0xb')]){var _0x473ee4=document[_0x25a0('0x1')](_0x25a0('0xc')),_0x3c0b3b=document[_0x25a0('0x1')](_0x25a0('0xc')),_0x1f5f8c=document[_0x25a0('0x1')](_0x25a0('0xd')),_0x5a9ba0=document['createElement']('p');_0x473ee4[_0x25a0('0xe')]('style',_0x25a0('0xf')),_0x3c0b3b['setAttribute']('style',_0x25a0('0x10')),_0x1f5f8c[_0x25a0('0xe')](_0x25a0('0x6'),'color: white; cursor: pointer; font-size: 50px; font-weight: bold; position: absolute; right: 30px; top: 20px;'),_0x5a9ba0[_0x25a0('0xe')](_0x25a0('0x6'),_0x25a0('0x11')),_0x5a9ba0[_0x25a0('0x3')]=_0x25a0('0x12'),_0x1f5f8c[_0x25a0('0x3')]='&#10006;',_0x3c0b3b['appendChild'](_0x5a9ba0),_0x3c0b3b[_0x25a0('0xa')](_0x1f5f8c),_0x1f5f8c[_0x25a0('0x13')](_0x25a0('0x14'),function _0x3c0b3b(){_0x473ee4[_0x25a0('0x15')][_0x25a0('0x16')](_0x473ee4),_0x1f5f8c['removeEventListener']('click',_0x3c0b3b);}),_0x473ee4[_0x25a0('0xa')](_0x3c0b3b),document[_0x25a0('0x9')][_0x25a0('0xa')](_0x473ee4);}},0xc8),window[_0x25a0('0x17')]('DOMContentLoaded',e);});});</script><script type='text/javascript' onerror='absda()' src='//blissfuldes.com/41/6c/2e/416c2e838ffd0ebdc5c06cfa83cc5244.js'></script>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Magento 2 Performance Optimization : Code optimization and database audit.</h1>
+			
+		</header><div class="content post__content clearfix">
+			
+<section>
+    <aside>
+        <a href="https://www.mgt-commerce.com/astatic/assets/images/article/2021/12/8c587a18584631509e840241dbef6b9a.png"><img alt="How To Increase The Speed Of Your Magento Website Top 12 Easy And Useful Tips The baseline for a demo site installed with magento 2.1.4 and magento&#039;s sample data, on a digital ocean 2gb droplet with php 5.6, before any of the optimisation steps, is as follows speed of your magento website" src="https://www.mgt-commerce.com/astatic/assets/images/article/2021/12/8c587a18584631509e840241dbef6b9a.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4XFuVx69vNgXKc8Ny_QROfc7kht83lAM9JQ&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>1112x916 - Even google trends agree with the fact that the activity around magento is still very high, since its official release in 2008. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 1112x916</li> 
+    <mark>How To Increase The Speed Of Your Magento Website Top 12 Easy And Useful Tips </mark> The main reason for its poor performance is an excessive use of various customizations.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://cdn.mageplaza.com/media/general/nfkHXTE.png"><img alt="Magento 2 Performance Optimization 97 100 Scores Mageplaza Website owners should optimize their magento 2 store to ensure success. magento 2 performance optimization 97" src="https://cdn.mageplaza.com/media/general/nfkHXTE.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnW1GSgQ2nnyalRB3YwM6EaMjMcVQQ7RXiUg&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>1002x1078 - Optimize js, css and html code structure. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 1002x1078</li> 
+    <mark>Magento 2 Performance Optimization 97 100 Scores Mageplaza </mark> Magento 2 performance optimizations aimed for developers actively developing for magento 2.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://www.aitoc.com/blog/wp-content/uploads/2020/03/2.png"><img alt="Tips And Tricks For Magento Performance Optimization Aitoc Blog Magento performance is of paramount importance. magento performance optimization" src="https://www.aitoc.com/blog/wp-content/uploads/2020/03/2.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ss-n7JOSY_JoLNdTC-a7PpTlMcx6iikBiQ&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>974x210 - Magento, one of the most popular ecommerce platforms, might be slow. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 974x210</li> 
+    <mark>Tips And Tricks For Magento Performance Optimization Aitoc Blog </mark> Composer is required for developers who wish to contribute to the magento 2 codebase or anyone who wishes to develop magento extensions.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://www.mage-world.com/amp/wp-content/uploads/2020/06/SN_1.png"><img alt="How To Make Magento 2 Performance Optimization Effectively Boost your webstore traffic by the speed optimization and get an endless stream of new visitors! www mage world com" src="https://www.mage-world.com/amp/wp-content/uploads/2020/06/SN_1.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbot-xDtt9V4qo8Hgsqc35VS2KABbAxlVg4g&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>700x355 - There are several performance optimization tips for magento 2 that can help you achieve the desired results: </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 700x355</li> 
+    <mark>How To Make Magento 2 Performance Optimization Effectively </mark> We offer a comprehensive approach where you can evaluate all aspects of your store performance and fix all the magento issues.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://www.cloudways.com/blog/wp-content/uploads/Image-Optimizer-By-Apptrian-Magento-Optimization.png"><img alt="Magento 2 Speed Optimization Tips For Fast Performance Magento 2 speed optimization steps. magento 2 speed optimization tips for" src="https://www.cloudways.com/blog/wp-content/uploads/Image-Optimizer-By-Apptrian-Magento-Optimization.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkn4oGEdFGrZG04IaHWPT2-w2D_3yh09V_VA&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>1312x576 - Optimize js, css and html code structure. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 1312x576</li> 
+    <mark>Magento 2 Speed Optimization Tips For Fast Performance </mark> The main reason for its poor performance is an excessive use of various customizations.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://www.icecubedigital.com/wp-content/uploads/2018/06/How-to-speed-up-Magento-2-website-Magento-2-Development.png"><img alt="How To Speed Up Magento 2 Website You job is to configure them properly. how to speed up magento 2 website" src="https://www.icecubedigital.com/wp-content/uploads/2018/06/How-to-speed-up-Magento-2-website-Magento-2-Development.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2edRLBgBB0FOXB_XypXn_qFD6Fhy30bF2ag&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>852x508 - The latter is designed for optimal performance and is much faster than the first two. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 852x508</li> 
+    <mark>How To Speed Up Magento 2 Website </mark> By default, magento 2 has two options for full page cache:
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://dev98.de/wp-content/uploads/2017/02/img_dev98_20170210_cron-performance-featured_cm.png"><img alt="Cronjob Performance Optimization Magento 1 Vs Magento 2 Dev98 These five proven tips can enable you how to speed up magento 2 some magento 2 extensions may not be developed for optimization and when installed, they may slow down your website. magento 1 vs magento 2" src="https://dev98.de/wp-content/uploads/2017/02/img_dev98_20170210_cron-performance-featured_cm.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNlhYg-MmQaln9LYMqAthKIFc8w_dWex0wMg&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>830x460 - From the 2nd time, it works smoothly. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 830x460</li> 
+    <mark>Cronjob Performance Optimization Magento 1 Vs Magento 2 Dev98 </mark> Website owners should optimize their magento 2 store to ensure success.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://nulledfree.pw/wp-content/uploads/2020/04/performance-optimization-tool-magento-2-extension-nulled-download.png"><img alt="Performance Optimization Tool For Magento 2 V 1 5 0 Nulled Free Download Magento 2 speed optimization steps. nulled wordpress themes" src="https://nulledfree.pw/wp-content/uploads/2020/04/performance-optimization-tool-magento-2-extension-nulled-download.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3f7a-ipy1kDe1BGpiEX8j-MCk4tGyaiXDxQ&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>265x265 - Try switching to one of those magento optimized hosting companies. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 265x265</li> 
+    <mark>Performance Optimization Tool For Magento 2 V 1 5 0 Nulled Free Download </mark> It is important to check the speed.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://amasty.com/blog/wp-content/uploads/2015/12/table-all.jpg"><img alt="Performance Comparison Magento 1 Vs Magento 2 Speed Test With New Tool Javascript bundling reduce two things first is the number of server request and second is size of the server. magento 1 vs magento 2 speed test with" src="https://amasty.com/blog/wp-content/uploads/2015/12/table-all.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1L21kLRIEyHzk1_25xUC86OYnRFBDdaDjLA&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>700x566 - Loading speed has a direct and measurable impact on the conversion rate of your website, hence having an optimized magento installation is crucial to the success of your magento shop and possibly even your business in general. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 700x566</li> 
+    <mark>Performance Comparison Magento 1 Vs Magento 2 Speed Test With New Tool </mark> The baseline for a demo site installed with magento 2.1.4 and magento&#039;s sample data, on a digital ocean 2gb droplet with php 5.6, before any of the optimisation steps, is as follows
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://www.codelandinfosoft.com/wp-content/uploads/2020/12/How-Much-Does-it-Cost-to-Develop-Magento-eCommerce-Website_-11.png"><img alt="Ultimate Guideline For Magento 2 Performance Optimization The image is a necessary factor to make your magento 2 store&#039;s performance more vivid. codeland infosoft" src="https://www.codelandinfosoft.com/wp-content/uploads/2020/12/How-Much-Does-it-Cost-to-Develop-Magento-eCommerce-Website_-11.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmYto0euonZEm3nLop8AJICXdvIN52hQgBvg&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>890x380 - These hosting solutions simplify hosting. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 890x380</li> 
+    <mark>Ultimate Guideline For Magento 2 Performance Optimization </mark> Magento 2 performance optimization, how to speed up magento 2 website.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://pragmaapps.com/wp-content/uploads/2016/08/Magento-performance-optimization.jpg"><img alt="The Death Of Magento Performance 13 Common Guidelines Website owners should optimize their magento 2 store to ensure success. pragmaapps com" src="https://pragmaapps.com/wp-content/uploads/2016/08/Magento-performance-optimization.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS24TlegH_r8uK2fhGxL-ymHoYyF_QgiyUoGA&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>825x450 - Rather than opting for shared hosting, consider hosting your magento ecommerce store on a cloud provider like cloudways that offers a managed magento cloud hosting experience. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 825x450</li> 
+    <mark>The Death Of Magento Performance 13 Common Guidelines </mark> These hosting solutions simplify hosting.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://image.slidesharecdn.com/getthebestperformanceusingmagento2performanceoptimizationtricksandsteps-190723112545/95/get-the-best-performance-using-magento-2-performance-optimization-tricks-and-steps-1-638.jpg?cb=1563881212"><img alt="Get The Best Performance Using Magento 2 Performance Optimization Tr Tuning of your cache will also be undertaken by experts. slideshare" src="https://image.slidesharecdn.com/getthebestperformanceusingmagento2performanceoptimizationtricksandsteps-190723112545/95/get-the-best-performance-using-magento-2-performance-optimization-tricks-and-steps-1-638.jpg?cb=1563881212" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSbLgmDsDLDrrwWMKVju91cK-dcBe5LXjx-A&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>638x359 - A clean magento 2 installation allows reaching enough good performance by splitting bundles by page types, but some customization may require deeper analysis and other asset distributions. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 638x359</li> 
+    <mark>Get The Best Performance Using Magento 2 Performance Optimization Tr </mark> Before optimize magento performance, let &#039;s check to see how &#039;s your current site performance status by good insights.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://cdnblog.webkul.com/blog/wp-content/uploads/2019/11/language-translation-1200x298.png"><img alt="Magento 2 Defer Js Webp Lazy Loading Ttfb Improvement Guide Tuning of your cache will also be undertaken by experts. magento 2 defer js webp lazy loading" src="https://cdnblog.webkul.com/blog/wp-content/uploads/2019/11/language-translation-1200x298.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJiGpmy_KialRStLscf-9cI8GuPUkBbiQlsw&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>1200x298 - The magento 2 developers improved the platform with a toolkit which checks the performance using apache jmeter. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 1200x298</li> 
+    <mark>Magento 2 Defer Js Webp Lazy Loading Ttfb Improvement Guide </mark> The idea is to run magento 2 in production mode for performance, but make adjustments to it so that it does not need to be recompiled and the static files do not need to be redeployed with every change.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://www.fmeextensions.com/de/skin/frontend/default/fme_new/images/magento_maximum_time_load.png"><img alt="Magento 2 Speed Optimization Boost Performance Speed Up Magento 2 The need for magento 2 performance optimization. fme extensions" src="https://www.fmeextensions.com/de/skin/frontend/default/fme_new/images/magento_maximum_time_load.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvrchhYRvvBUeTMHj2DTX68TgtqhaLNW-D6w&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>495x357 - As optimizing magento performance is a task for a magento support team, we won&#039;t delve into much technical detail now. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 495x357</li> 
+    <mark>Magento 2 Speed Optimization Boost Performance Speed Up Magento 2 </mark> We offer a comprehensive approach where you can evaluate all aspects of your store performance and fix all the magento issues.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://www.sigmainfo.net/wp-content/uploads/2019/07/Optimizing-Magento-2-Performance.png"><img alt="How To Optimize Magento 2 Performance Magento 2 Page Speed Optimization It reduces the load time, the server load, which helps ranking high at google, and ultimately increasing. how to optimize magento 2 performance" src="https://www.sigmainfo.net/wp-content/uploads/2019/07/Optimizing-Magento-2-Performance.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-_9im970Ll_0T2FaFsFHqFKACxV_NjTPTlg&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>900x400 - These hosting solutions simplify hosting. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 900x400</li> 
+    <mark>How To Optimize Magento 2 Performance Magento 2 Page Speed Optimization </mark> Composer is required for developers who wish to contribute to the magento 2 codebase or anyone who wishes to develop magento extensions.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://www.agentosupport.com/wp-content/uploads/2020/01/Magento-2-Speed-Optimization-Agento-Support.png"><img alt="Magento 2 Speed Optimization Magento Performance Optimization Even google trends agree with the fact that the activity around magento is still very high, since its official release in 2008. magento 2 speed optimization magento performance optimization" src="https://www.agentosupport.com/wp-content/uploads/2020/01/Magento-2-Speed-Optimization-Agento-Support.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd5DEwAdXV8AxyjCvZS4uIx7dxIttS0YrxHw&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>648x409 - The latter is designed for optimal performance and is much faster than the first two. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 648x409</li> 
+    <mark>Magento 2 Speed Optimization Magento Performance Optimization </mark> By default, magento 2 has two options for full page cache:
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://no-cache.hubspot.com/cta/default/6909757/7c64dbf3-b0ab-426a-9f1a-65c87d693d1f.png"><img alt="Magento 2 Performance Optimization Dckap Blog Try switching to one of those magento optimized hosting companies. magento 2 performance optimization" src="https://no-cache.hubspot.com/cta/default/6909757/7c64dbf3-b0ab-426a-9f1a-65c87d693d1f.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVzBCK2cVVvu4WiV9nnR2V3wG7HkqlJlMvfw&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>1261x480 - Magento 2.3.1 unfolded in the docker container will be used in the review. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 1261x480</li> 
+    <mark>Magento 2 Performance Optimization Dckap Blog </mark> For magento performance optimization, you can go for varnish, nginx, redis, php7.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://i.stack.imgur.com/3wYoW.png"><img alt="How To Improve Magento Site Performance Magento Stack Exchange Misconfiguration of servers can lead to slow magento sites. how to improve magento site performance" src="https://i.stack.imgur.com/3wYoW.png" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnVD0uPOiJUVI4QhU34EYWvuwRcKWWOFDphQ&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>1107x880 - Therefore, we use ssd (solid state disk) to speed up. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 1107x880</li> 
+    <mark>How To Improve Magento Site Performance Magento Stack Exchange </mark> Some other performance enhancements will be significant after optimizing those first bytes.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://cdn.mageplaza.com/media/general/ECfBSBj.jpg"><img alt="Magento 2 Performance Optimization 97 100 Scores Mageplaza Magento, one of the most popular ecommerce platforms, might be slow. magento 2 performance optimization 97" src="https://cdn.mageplaza.com/media/general/ECfBSBj.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3pzkJl20YL7vh4kbW9K-aItQnjzguWLYQlQ&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>1100x366 - Optimize javascript code and css. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 1100x366</li> 
+    <mark>Magento 2 Performance Optimization 97 100 Scores Mageplaza </mark> Website owners should optimize their magento 2 store to ensure success.
+</blockquote>
+    </aside>
+    <aside>
+        <a href="https://www.idslogic.com/blog/wp-content/uploads/2019/01/Cache-Strategy-for-Magento-2-Performance.jpg"><img alt="Make Magento 2 Website Run Faster By Effective Cache Optimization Strategy There are several performance optimization tips for magento 2 that can help you achieve the desired results: cache optimization strategy" src="https://www.idslogic.com/blog/wp-content/uploads/2019/01/Cache-Strategy-for-Magento-2-Performance.jpg" width="100%" onerror="this.onerror=null;this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmRUVG0CUH7r_9W-KwgyEASE2JoJVj3LOUkw&amp;usqp=CAU';"></a>
+		
+		<p style="text-align: center;"><b>823x400 - Magento, one of the most popular ecommerce platforms, might be slow. </b></p>
+   <div align="center">
+
+
+  <blockquote class="tr_bq">
+<li>Original Resolution: 823x400</li> 
+    <mark>Make Magento 2 Website Run Faster By Effective Cache Optimization Strategy </mark> The baseline for a demo site installed with magento 2.1.4 and magento&#039;s sample data, on a digital ocean 2gb droplet with php 5.6, before any of the optimisation steps, is as follows
+</blockquote>
+    </aside>
+</section>
+
+
+	<section>
+ 
+</section>
+		</div>
+	</article>
+</main>
+
+
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+	<form class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="q" aria-label="SEARCH…">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="https://fitonesu.vercel.app/" />
+	</form>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/background-bintang-malam-aesthetic/">Background Bintang Malam Aesthetic - See more ideas about добермани, пари підлітків, драко мелфой.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/background-biru-tua/">Background Biru Tua - If you have your own one, just send us the image and we will show.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/henna-simple-untuk-anak-sekolah-sd/">Henna Simple Untuk Anak Sekolah Sd - Pada kategori pengukuran status gizi anak dengan imt/u ini, ambang batas (z score) adalah.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/imagenes-de-mikecrack-gif/">Imagenes De Mikecrack Gif : Fast and easy gif creation.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/lossa2squa-hinata-parole/">Lossa2Squa Hinata Parole - Lossa2squa hinata is a popular song by 💜 | create your own tiktok videos with the lossa2squa hinata song and explore 673 videos made by new and popular creators.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/mekkah-muslim-aesthetic-wallpaper/">Mekkah Muslim Aesthetic Wallpaper : #fashion #hijab i #muslim #outfit #aesthetic.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ummi-tsumma-ummi-lirik-arab-dan-terjemahan/">Ummi Tsumma Ummi Lirik Arab Dan Terjemahan / Dan yang di bawah ini adalah lirik lagu ummi tsumma ummi dengan versi arab, latin dan beserta artinya.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/wallpaper-biru-dongker-polos/">Wallpaper Biru Dongker Polos / .navy putih cocok untuk :</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/wallpaper-boneka-aesthetic-pinterest/">Wallpaper Boneka Aesthetic Pinterest : Jangan lupa sebelum kalian save silahkan vote and comment dulu.</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/xxanaxx-tentacion-17-lyrics-meaning-in-urdu-translation/">Xxanaxx Tentacion 17 Lyrics Meaning In Urdu Translation / Here is the translation of sayyoni song from movie junoon.</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2021 Fitonesu.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+		
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21862896-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-21862896-2');
+</script>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
